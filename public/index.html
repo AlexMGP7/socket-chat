@@ -12,10 +12,7 @@
       crossorigin="anonymous"
     />
 
-    <meta
-      name="google-signin-client_id"
-      content="1023916028923-mnn067lcjn3itrr0lo8oj1s07kddgrcj.apps.googleusercontent.com"
-    />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
   </head>
   <body class="container">
     <div class="row mt-5">
@@ -23,14 +20,40 @@
         <h1>Google Signin</h1>
         <hr />
         <br />
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <div
+          id="g_id_onload"
+          data-client_id="271395966994-ea7005q9cmc8fotf0bupcbl994jeh3qt.apps.googleusercontent.com"
+          data-callback="handleCredentialResponse"
+        ></div>
+        <div class="g_id_signin"></div>
         <br />
         <a href="#" onclick="signOut();">Sign out</a>
       </div>
-      <div class="col-sm-6"></div>
-    </div>
+      <div class="col-sm-6">
+        <h1>Login manual</h1>
+        <hr />
 
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <form class="d-grid">
+
+          <input
+            type="text"
+            name="correo"
+            class="form-control mb-2"
+            placeholder="Correo"
+          />
+          <input
+            type="password"
+            name="password"
+            class="form-control mb-2"
+            placeholder="Password"
+          />
+  
+          <button type="submit" class="btn btn-primary mb-2">Ingresar</button>
+        
+        </form>
+
+      </div>
+    </div>
 
     <script src="./js/auth.js"></script>
   </body>
